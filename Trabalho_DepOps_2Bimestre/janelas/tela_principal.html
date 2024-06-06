@@ -10,9 +10,11 @@
         .main-container {
             padding: 20px;
         }
+
         .news {
             margin-top: 20px;
         }
+
         .accessibility-panel {
             display: none;
             background: #f8f9fa;
@@ -24,12 +26,15 @@
             right: 10px;
             width: 200px;
         }
+
         .accessibility-panel input[type=range] {
             width: 100%;
         }
+
         .high-contrast {
             filter: invert(100%);
         }
+
         .dropdown-menu {
             display: none;
             position: absolute;
@@ -37,30 +42,72 @@
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
             z-index: 1000;
         }
+
         .dropdown-menu.show {
             display: block;
+        }
+
+        .search-bar {
+            margin-top: 10px;
+        }
+
+        .no-border {
+            border: none !important;
+        }
+
+        .card-deck .card {
+            flex: 1 0 30%;
+            margin-bottom: 20px;
+        }
+
+        .card img {
+            height: 200px;
+            object-fit: cover;
         }
     </style>
 </head>
 
 <body class="bg-light">
 
-    <!-- Header -->
     <header class="bg-dark text-white p-3">
-        <div class="container d-flex justify-content-between align-items-center">
-            <img src="img/logotipo.png" alt="Logotipo" class="img-fluid" style="max-width: 150px;">
-            <input type="text" class="form-control" placeholder="Busca" style="max-width: 300px;">
-            <div class="btn-group" role="group" aria-label="User actions">
-                <button type="button" class="btn btn-outline-light dropdown-toggle" id="user-icon" aria-haspopup="true" aria-expanded="false">
-                    Usuário
-                </button>
-                <div class="dropdown-menu" aria-labelledby="user-icon">
-                    <a class="dropdown-item" href="#">Atualizar Senha</a>
-                    <a class="dropdown-item" href="#">Sair</a>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-6 col-md-3">
+                    <img src="img/logotipo.png" alt="Logotipo" class="img-fluid" style="max-width: 150px;">
                 </div>
-                <button type="button" class="btn btn-outline-light" id="config-icon">
-                    Configurações
-                </button>
+                <div class="col-12 col-md-6 search-bar">
+                    <input type="text" class="form-control" placeholder="Busca">
+                </div>
+                <div class="col-md-3 text-right d-none d-md-flex">
+                    <div class="btn-group" role="group" aria-label="User actions">
+                        <button type="button" class="btn btn-outline-light dropdown-toggle no-border" id="user-icon" aria-haspopup="true" aria-expanded="false">
+                            Usuário
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="user-icon">
+                            <a class="dropdown-item" href="#">Atualizar Senha</a>
+                            <a class="dropdown-item" href="#">Sair</a>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-outline-light ml-2 no-border" id="config-icon">
+                        Configurações
+                    </button>
+                </div>
+                <div class="col-6 text-left d-flex d-md-none">
+                    <div class="btn-group" role="group" aria-label="User actions">
+                        <button type="button" class="btn btn-outline-light dropdown-toggle no-border" id="user-icon" aria-haspopup="true" aria-expanded="false">
+                            Usuário
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="user-icon">
+                            <a class="dropdown-item" href="#">Atualizar Senha</a>
+                            <a class="dropdown-item" href="#">Sair</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 text-right d-flex d-md-none">
+                    <button type="button" class="btn btn-outline-light ml-2 no-border" id="config-icon">
+                        Configurações
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -68,7 +115,35 @@
     <div class="container main-container">
         <div class="news">
             <h3>Notícias/Propagandas</h3>
-            <p>Aqui estão as últimas notícias e propagandas relevantes para você.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="img/news1.jpg" class="card-img-top" alt="Notícia 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Notícia 1</h5>
+                            <p class="card-text">Descrição da notícia 1.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="img/news2.jpg" class="card-img-top" alt="Notícia 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Notícia 2</h5>
+                            <p class="card-text">Descrição da notícia 2.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="img/news3.jpg" class="card-img-top" alt="Notícia 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Notícia 3</h5>
+                            <p class="card-text">Descrição da notícia 3.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -89,11 +164,12 @@
 
     <footer class="bg-dark text-white text-center p-3 mt-4">
         <div class="container">
-            <p>&copy; 2024 Sistema Responsivo. Todos os direitos reservados.</p>
+            <p>Trabalho de DevOps.</p>
             <p>
-                <a href="#" class="text-white">Política de Privacidade</a> |
-                <a href="#" class="text-white">Termos de Uso</a> |
-                <a href="#" class="text-white">Contato</a>
+                <a href="#" class="text-white">Igor Antonucci, RA: 13636 </a>|
+                <a href="#" class="text-white">Aluno02 </a>|
+                <a href="#" class="text-white">Aluno03</a>|
+                <a href="#" class="text-white">Aluno04</a>
             </p>
         </div>
     </footer>
@@ -145,4 +221,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>
